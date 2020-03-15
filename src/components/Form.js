@@ -1,7 +1,15 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import UrlInput from './UrlInput'
+import BannerModel from '../models/BannerModel'
 
 class Form extends Component {
+  static propTypes = {
+    banner: PropTypes.instanceOf(BannerModel).isRequired,
+    submitBanner: PropTypes.func.isRequired,
+    updateBanner: PropTypes.func.isRequired
+  }
+
   handleChange = event => {
     const updatedBanner = this.props.banner.setField(
       event.currentTarget.name,
@@ -14,7 +22,7 @@ class Form extends Component {
     return (
       <form className="form" onSubmit={this.props.submitBanner}>
         <div className="form__group">
-          <label htmlFor="">Название баннера</label>
+          <label>Название баннера</label>
           <input
             type="text"
             name="name"
@@ -25,7 +33,7 @@ class Form extends Component {
         </div>
 
         <div className="form__group">
-          <label htmlFor="">Тип баннера</label>
+          <label>Тип баннера</label>
           <select
             value={this.props.banner.type}
             name="type"
@@ -37,7 +45,7 @@ class Form extends Component {
         </div>
 
         <div className="form__group">
-          <label htmlFor="">Изображение вертикальное (ссылка)</label>
+          <label>Изображение вертикальное (ссылка)</label>
           <UrlInput
             name="vertImage"
             value={this.props.banner.vertImage}
@@ -47,7 +55,7 @@ class Form extends Component {
         </div>
 
         <div className="form__group">
-          <label htmlFor="">Изображение горизонтальное (ссылка)</label>
+          <label>Изображение горизонтальное (ссылка)</label>
           <UrlInput
             name="horImage"
             value={this.props.banner.horImage}
@@ -57,7 +65,7 @@ class Form extends Component {
         </div>
 
         <div className="form__group">
-          <label htmlFor="">Целевая ссылка</label>
+          <label>Целевая ссылка</label>
           <UrlInput
             name="targetLink"
             value={this.props.banner.targetLink}

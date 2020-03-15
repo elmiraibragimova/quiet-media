@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import cn from 'classnames'
 
 const Nav = ({ isPreviewAvailable }) => {
@@ -20,6 +21,10 @@ const Nav = ({ isPreviewAvailable }) => {
       </ul>
     </nav>
   )
+}
+
+Nav.propTypes = {
+  isPreviewAvailable: PropTypes.bool.isRequired
 }
 
 export default Nav

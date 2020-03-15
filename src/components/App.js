@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import '../css/main.css'
 
 import Nav from './Nav'
@@ -8,6 +9,12 @@ import Banner from './Banner'
 import BannerModel from '../models/BannerModel'
 
 class App extends Component {
+  static propTypes = {
+    history: PropTypes.shape({
+      push: PropTypes.func
+    }).isRequired
+  }
+
   state = {
     currentBanner: new BannerModel(),
     savedBanner: null
@@ -18,9 +25,10 @@ class App extends Component {
   }
 
   submitBanner = event => {
+    const { history } = this.props
     event.preventDefault()
-    this.setState({ savedBanner: this.state.currentBanner })
-    this.props.history.push('/preview')
+    this.setState(prevState => ({ savedBanner: prevState.currentBanner }))
+    history.push('/preview')
   }
 
   isPreviewAvailable() {

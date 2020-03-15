@@ -17,6 +17,7 @@
     "indent": ["error", 2],
     "space-before-function-paren": "off",
     "react/jsx-one-expression-per-line": "off",
+    "react/destructuring-assignment": "off",
     "import/no-extraneous-dependencies": [
         "error",
         { "devDependencies": true }

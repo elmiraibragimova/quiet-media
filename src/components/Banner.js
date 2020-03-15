@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import BannerModel from '../models/BannerModel'
 
 class Banner extends Component {
+  static propTypes = {
+    banner: PropTypes.instanceOf(BannerModel).isRequired
+  }
+
   getBannerAdv() {
     const title = (
       <h3 className="banner__title" key="title">
