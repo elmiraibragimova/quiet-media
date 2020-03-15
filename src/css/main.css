@@ -36,6 +36,7 @@ ul {
 
 .layout__sidebar {
   grid-column: 2;
+  position: relative;
 }
 
 .layout__content {
@@ -43,7 +44,11 @@ ul {
   padding-bottom: 100px;
   padding-left: 30px;
   padding-right: 30px;
-  overflow: auto;
+}
+
+.menu {
+  position: sticky;
+  top: 30px;
 }
 
 .menu__item a {

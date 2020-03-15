@@ -5,8 +5,8 @@ import cn from 'classnames'
 
 const Nav = ({ isPreviewAvailable }) => {
   return (
-    <nav>
-      <ul className="menu">
+    <nav className="menu">
+      <ul className="menu__list">
         <li className="menu__item">
           <NavLink to="params">Параметры</NavLink>
         </li>

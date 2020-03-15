@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import scrollToElement from 'scroll-to-element'
 import '../css/main.css'
 
 import Nav from './Nav'
@@ -12,6 +13,9 @@ class App extends Component {
   static propTypes = {
     history: PropTypes.shape({
       push: PropTypes.func
+    }).isRequired,
+    location: PropTypes.shape({
+      pathname: PropTypes.string
     }).isRequired
   }
 
@@ -29,6 +33,18 @@ class App extends Component {
     event.preventDefault()
     this.setState(prevState => ({ savedBanner: prevState.currentBanner }))
     history.push('/preview')
+  }
+
+  componentDidUpdate(prevProps) {
+    if (
+      this.props.location.pathname &&
+      this.props.location.pathname !== prevProps.location.pathname
+    ) {
+      scrollToElement(`section#${this.props.location.pathname.substr(1)}`, {
+        ease: 'out-bounce',
+        duration: 1000
+      })
+    }
   }
 
   isPreviewAvailable() {
