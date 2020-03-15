@@ -59,3 +59,47 @@ ul {
   opacity: 0.5;
   pointer-events: none;
 }
+
+
+.form__group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 3px;
+
+}
+
+input {
+  padding: 5px;
+  width: 300px;
+  font-size: 16px;
+}
+
+select {
+  font-size: 16px;
+  width: 314px;
+  padding: 5px;
+  border-radius: 0;
+}
+
+.button {
+  font-size: 16px;
+  border: none;
+  background-color: #bcd1e4;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #9cbcd8;
+}
+
+.screen + .screen {
+  margin-top: 50px;
+}
