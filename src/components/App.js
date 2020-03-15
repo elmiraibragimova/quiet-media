@@ -9,6 +9,8 @@ import Banner from './Banner'
 
 import BannerModel from '../models/BannerModel'
 
+import { SECTION_PARAMS, SECTION_PREVIEW } from '../constants'
+
 class App extends Component {
   static propTypes = {
     history: PropTypes.shape({
@@ -25,8 +27,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    if (!this.isPreviewAvailable() && this.getSectionName() === 'preview') {
-      this.props.history.push('/params')
+    if (
+      !this.isPreviewAvailable() &&
+      this.getSectionName() === SECTION_PREVIEW
+    ) {
+      this.props.history.push(`/${SECTION_PARAMS}`)
     }
   }
 
@@ -47,8 +52,8 @@ class App extends Component {
     const { history } = this.props
     event.preventDefault()
     this.setState(prevState => ({ savedBanner: prevState.currentBanner }))
-    history.push('/preview')
-    this.scrollToSection('preview')
+    history.push(`/${SECTION_PREVIEW}`)
+    this.scrollToSection(SECTION_PREVIEW)
   }
 
   updateBanner = updatedBanner => {
@@ -73,7 +78,7 @@ class App extends Component {
           <Nav isPreviewAvailable={this.isPreviewAvailable()} />
         </aside>
         <main className="layout__content">
-          <section id="params" className="screen">
+          <section id={SECTION_PARAMS} className="screen">
             <h2 className="screen__title">Параметры</h2>
             <Form
               banner={this.state.currentBanner}
@@ -83,7 +88,7 @@ class App extends Component {
           </section>
 
           {this.isPreviewAvailable() && (
-            <section id="preview" className="screen">
+            <section id={SECTION_PREVIEW} className="screen">
               <>
                 <h2 className="screen__title">Предпросмотр</h2>
                 <div className="screen__container">

@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import UrlInput from './UrlInput'
 import BannerModel from '../models/BannerModel'
 
+import { BANNER_TYPE_FORWARD, BANNER_TYPE_REVERSE } from '../constants'
+
 class Form extends Component {
   static propTypes = {
     banner: PropTypes.instanceOf(BannerModel).isRequired,
@@ -41,8 +43,8 @@ class Form extends Component {
             name="type"
             onChange={this.handleChange}
           >
-            <option value="forward">Прямой</option>
-            <option value="reverse">Обратный</option>
+            <option value={BANNER_TYPE_FORWARD}>Прямой</option>
+            <option value={BANNER_TYPE_REVERSE}>Обратный</option>
           </select>
         </div>
 
