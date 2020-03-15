@@ -24,15 +24,10 @@ class App extends Component {
     savedBanner: null
   }
 
-  updateBanner = updatedBanner => {
-    this.setState({ currentBanner: updatedBanner })
-  }
-
-  submitBanner = event => {
-    const { history } = this.props
-    event.preventDefault()
-    this.setState(prevState => ({ savedBanner: prevState.currentBanner }))
-    history.push('/preview')
+  componentDidMount() {
+    if (!this.isPreviewAvailable() && this.getSectionName() === 'preview') {
+      this.props.history.push('/params')
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -40,11 +35,31 @@ class App extends Component {
       this.props.location.pathname &&
       this.props.location.pathname !== prevProps.location.pathname
     ) {
-      scrollToElement(`section#${this.props.location.pathname.substr(1)}`, {
-        ease: 'out-bounce',
-        duration: 1000
-      })
+      this.scrollToSection(this.getSectionName())
     }
+  }
+
+  getSectionName() {
+    return this.props.location.pathname.substr(1)
+  }
+
+  submitBanner = event => {
+    const { history } = this.props
+    event.preventDefault()
+    this.setState(prevState => ({ savedBanner: prevState.currentBanner }))
+    history.push('/preview')
+    this.scrollToSection('preview')
+  }
+
+  updateBanner = updatedBanner => {
+    this.setState({ currentBanner: updatedBanner })
+  }
+
+  scrollToSection = section => {
+    scrollToElement(`section#${section}`, {
+      ease: 'out-bounce',
+      duration: 1000
+    })
   }
 
   isPreviewAvailable() {

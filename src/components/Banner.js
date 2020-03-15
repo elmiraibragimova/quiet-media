@@ -47,7 +47,7 @@ class Banner extends Component {
           <img srcSet="default.jpg" alt="" />
         </picture>
 
-        <section className="banner__add">{this.getBannerAdv()}</section>
+        <section className="banner__content">{this.getBannerAdv()}</section>
       </article>
     )
   }

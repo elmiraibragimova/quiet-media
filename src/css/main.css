@@ -137,7 +137,6 @@ select {
 
 .banner {
   position: relative;
-  border: 1px solid;
   display: inline-block;
   text-align: left;
 }
@@ -156,7 +155,7 @@ select {
   }
 }
 
-.banner__add {
+.banner__content {
   position: absolute;
   left: 0;
   right: 0;
@@ -186,10 +185,11 @@ select {
   line-height: 2em;
   padding: .3em 1.5em .3em .5em;    
   font-family: sans-serif;
+  color: #fff;
   background-image:
     linear-gradient(
       115deg,
-      rgba(0,0,0,.1) calc(100% - 1em),
+      rgba(0, 0, 0, 1) calc(100% - 1em),
       transparent calc(100% - 1em)
     );
 }
