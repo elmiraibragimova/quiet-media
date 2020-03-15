@@ -18,6 +18,8 @@
     "space-before-function-paren": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/destructuring-assignment": "off",
+    "jsx-a11y/label-has-associated-control": "off",  // this rule is deprecated
+    "jsx-a11y/label-has-for": "off",  // this rule is deprecated
     "import/no-extraneous-dependencies": [
         "error",
         { "devDependencies": true }

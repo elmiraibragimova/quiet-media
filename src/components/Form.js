@@ -22,8 +22,9 @@ class Form extends Component {
     return (
       <form className="form" onSubmit={this.props.submitBanner}>
         <div className="form__group">
-          <label>Название баннера</label>
+          <label htmlFor="bannerName">Название баннера</label>
           <input
+            id="bannerName"
             type="text"
             name="name"
             value={this.props.banner.name}
@@ -33,8 +34,9 @@ class Form extends Component {
         </div>
 
         <div className="form__group">
-          <label>Тип баннера</label>
+          <label htmlFor="bannerType">Тип баннера</label>
           <select
+            id="bannerType"
             value={this.props.banner.type}
             name="type"
             onChange={this.handleChange}
@@ -45,8 +47,11 @@ class Form extends Component {
         </div>
 
         <div className="form__group">
-          <label>Изображение вертикальное (ссылка)</label>
+          <label htmlFor="bannerVertImage">
+            Изображение вертикальное (ссылка)
+          </label>
           <UrlInput
+            id="bannerVertImage"
             name="vertImage"
             value={this.props.banner.vertImage}
             onChange={this.handleChange}
@@ -55,8 +60,11 @@ class Form extends Component {
         </div>
 
         <div className="form__group">
-          <label>Изображение горизонтальное (ссылка)</label>
+          <label htmlFor="bannerHorImage">
+            Изображение горизонтальное (ссылка)
+          </label>
           <UrlInput
+            id="bannerHorImage"
             name="horImage"
             value={this.props.banner.horImage}
             onChange={this.handleChange}
@@ -65,8 +73,9 @@ class Form extends Component {
         </div>
 
         <div className="form__group">
-          <label>Целевая ссылка</label>
+          <label htmlFor="bannerTarget">Целевая ссылка</label>
           <UrlInput
+            id="bannerTarget"
             name="targetLink"
             value={this.props.banner.targetLink}
             onChange={this.handleChange}
