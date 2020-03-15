@@ -43,6 +43,7 @@ class App extends Component {
         </aside>
         <main className="layout__content">
           <section id="params" className="screen">
+            <h2 className="screen__title">Параметры</h2>
             <Form
               banner={this.state.currentBanner}
               updateBanner={this.updateBanner}
@@ -50,11 +51,16 @@ class App extends Component {
             />
           </section>
 
-          <section id="preview" className="screen">
-            {this.isPreviewAvailable() && (
-              <Banner banner={this.state.savedBanner} />
-            )}
-          </section>
+          {this.isPreviewAvailable() && (
+            <section id="preview" className="screen">
+              <>
+                <h2 className="screen__title">Предпросмотр</h2>
+                <div className="screen__container">
+                  <Banner banner={this.state.savedBanner} />
+                </div>
+              </>
+            </section>
+          )}
         </main>
       </section>
     )

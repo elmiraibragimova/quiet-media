@@ -5,16 +5,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #edeeef;
+  color: #444;
 }
 
 a {
   text-decoration: none;
-  color: #5f76ea;
+  color: #45618f;
   transition: color 0.3s;
 }
 
 a:hover {
-  color: #485cc3;
+  color: #1d1d1d;
 }
 
 ul {
@@ -26,20 +28,22 @@ ul {
 
 .layout {
   display: grid;
-  grid-template-columns: minmax(auto, 300px) 1fr;
-  grid-template-rows: 80px auto;
-  grid-column-gap: 30px;
+  grid-template-columns: 30px minmax(auto, 300px) 1fr;
+  grid-column-gap: 10px;
+  height: 100vh;
+  padding-top: 30px;
 }
 
 .layout__sidebar {
-  grid-row: 2;
+  grid-column: 2;
 }
 
 .layout__content {
-  grid-row: 2;
+  grid-column: 3;
   padding-bottom: 100px;
   padding-left: 30px;
   padding-right: 30px;
+  overflow: auto;
 }
 
 .menu__item a {
@@ -49,15 +53,17 @@ ul {
   padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid #ccc;
-  background-color: aliceblue;
+  background-color: #fff;
 }
 
 .menu__item a.active {
-  background-color: #bcd1e4;
+  background-color: #45618f;
+  color: #fff;
 }
 
 .menu__item a.disabled {
-  opacity: 0.5;
+  background-color: #fff;
+  color: #b5b3b3;
   pointer-events: none;
 }
 
@@ -74,13 +80,12 @@ label {
 input {
   padding: 5px;
   width: 100%;
-  max-width: 500px;
   font-size: 16px;
 }
 
 select {
   font-size: 16px;
-  width: 314px;
+  width: 102%;
   padding: 5px;
   border-radius: 0;
 }
@@ -88,7 +93,8 @@ select {
 .button {
   font-size: 16px;
   border: none;
-  background-color: #bcd1e4;
+  background-color: transparent;
+  border: 2px solid #45618f;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
@@ -98,18 +104,37 @@ select {
 }
 
 .button:hover {
-  background-color: #9cbcd8;
+  background-color: #45618f;
+  color: #fff;
+}
+
+.screen {
+  padding: 40px;
+}
+
+.screen {
+  max-width: 650px;
+  background-color: #fff;
 }
 
 .screen + .screen {
   margin-top: 50px;
 }
 
+.screen__title {
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+
+.screen__container {
+  text-align: center;
+}
 
 .banner {
   position: relative;
   border: 1px solid;
   display: inline-block;
+  text-align: left;
 }
 
 .banner img {
@@ -137,12 +162,17 @@ select {
 
 .banner__button {
   border: none;
-  background-color: #bcd1e4;
+  background-color: #000;
+  color: #fff;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 10px;
   padding-right: 10px;
   cursor: pointer;
+}
+
+.banner__button:hover {
+  color: #fff;
 }
 
 .banner__title p {
