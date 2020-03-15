@@ -59,6 +59,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "autoprefixer": "^9.7.4",
     "classnames": "^2.2.6",
     "cross-env": "^6.0.3",
     "prop-types": "^15.7.2",
@@ -66,5 +67,9 @@
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
     "scroll-to-element": "^2.0.3"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }
