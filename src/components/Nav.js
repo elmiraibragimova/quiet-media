@@ -10,7 +10,12 @@ const Nav = ({ isPreviewAvailable }) => {
           <NavLink to="params">Параметры</NavLink>
         </li>
         <li className="menu__item">
-          <NavLink to="preview">Предпросмотр</NavLink>
+          <NavLink
+            className={cn({ disabled: !isPreviewAvailable })}
+            to="preview"
+          >
+            Предпросмотр
+          </NavLink>
         </li>
       </ul>
     </nav>
