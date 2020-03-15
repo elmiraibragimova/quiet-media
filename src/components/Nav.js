@@ -13,7 +13,7 @@ const Nav = ({ isPreviewAvailable }) => {
         <li className="menu__item">
           <NavLink
             className={cn({ disabled: !isPreviewAvailable })}
-            to="preview"
+            to={isPreviewAvailable ? 'preview' : ''}
           >
             Предпросмотр
           </NavLink>
