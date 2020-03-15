@@ -103,3 +103,57 @@ select {
 .screen + .screen {
   margin-top: 50px;
 }
+
+
+.banner {
+  position: relative;
+  border: 1px solid;
+  display: inline-block;
+}
+
+.banner img {
+  display: block;
+  width: 600px;
+  height: 240px;
+  object-fit: cover;
+}
+
+@media (orientation: portrait) {
+  .banner img {
+    width: 240px;
+    height: 600px;
+  }
+}
+
+.banner__add {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 20px;
+}
+
+.banner__button {
+  border: none;
+  background-color: #bcd1e4;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.banner__title p {
+  display: inline;
+  box-decoration-break: clone;
+  line-height: 2em;
+  padding: .3em 1.5em .3em .5em;    
+  font-family: sans-serif;
+  background-image:
+    linear-gradient(
+      115deg,
+      rgba(0,0,0,.1) calc(100% - 1em),
+      transparent calc(100% - 1em)
+    );
+}
