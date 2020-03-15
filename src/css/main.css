@@ -179,6 +179,16 @@ select {
   color: #fff;
 }
 
+.banner__title {
+  display: block;
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .banner__title p {
   display: inline;
   box-decoration-break: clone;
